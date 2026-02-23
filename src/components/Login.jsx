@@ -66,12 +66,13 @@ function Login() {
           <div className="form-group">
             <label htmlFor="role">Account Type</label>
             <select
-              id="role"
-              value={selectedRole}
-              onChange={(e) => setSelectedRole(e.target.value)}
+                id="role"
+                value={selectedRole}
+                onChange={(e) => setSelectedRole(e.target.value)}
             >
               <option value="regular">Regular User</option>
               <option value="premium">Premium User</option>
+              <option value="admin">Admin</option>
             </select>
           </div>
 

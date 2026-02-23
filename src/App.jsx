@@ -7,6 +7,7 @@ import SavedArticlesPage from './pages/SavedArticlesPage';
 import {AuthProvider} from "./context/AuthContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Login from "./components/Login.jsx";
+import AdminPage from "./pages/AdminPage.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/search" element={<SearchPage />} />
               <Route path="/saved" element={<ProtectedRoute><SavedArticlesPage /></ProtectedRoute>} />
               <Route path="/login" element={<Login />} />
+              <Route path="/admin" element={<ProtectedRoute><AdminPage/></ProtectedRoute>} />
             </Routes>
           </Layout>
         </BrowserRouter>

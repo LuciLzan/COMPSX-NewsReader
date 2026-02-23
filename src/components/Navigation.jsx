@@ -6,7 +6,7 @@ function Navigation() {
   const location = useLocation();
   const { getUserSavedArticles } = useArticles();
   const savedArticles = getUserSavedArticles();
-  const { user, isAuthenticated, logout } = useAuth();
+  const { user, isAuthenticated, logout,isAdmin} = useAuth();
 
   return (
     <nav>
@@ -32,6 +32,14 @@ function Navigation() {
             >
               Saved Articles ({savedArticles.length})
             </Link>
+            {isAuthenticated && isAdmin() && (
+                <Link
+                    to="/admin"
+                    className={`nav-link ${location.pathname === '/admin' ? 'active' : ''}`}
+                >
+                  Admin
+                </Link>
+            )}
           </div>
         </div>
         <div className="nav-user">

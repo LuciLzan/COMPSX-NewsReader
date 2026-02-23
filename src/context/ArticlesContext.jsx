@@ -51,6 +51,11 @@ export function ArticlesProvider({ children }) {
     return userArticles.some(a => a.url === url);
   };
 
+  const getAllUserArticles = () => {
+    return savedArticles; // returns the full object keyed by username
+  };
+
+
   return (
       <ArticlesContext.Provider
           value={{
@@ -58,7 +63,8 @@ export function ArticlesProvider({ children }) {
             saveArticle,
             removeArticle,
             isArticleSaved,
-            getUserSavedArticles
+            getUserSavedArticles,
+            getAllUserArticles
           }}
       >
         {children}
