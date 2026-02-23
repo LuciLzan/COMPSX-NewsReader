@@ -1,3 +1,4 @@
+//Via resource 2
 import { createContext, useContext, useState } from 'react';
 
 // Create the context
